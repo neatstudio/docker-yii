@@ -28,12 +28,11 @@ RUN \
   && /usr/local/bin/composer global require "fxp/composer-asset-plugin:*" \
 
   && apt-get clean \
-  && apt-get purge -y --auto-remove $buildDeps \
+#  && apt-get purge -y --auto-remove $buildDeps \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archive/*.deb
 
 
 VOLUME ["/var/www/html","/server/wwwroot"]
-
 
 # Adding ressources
 #ADD ressources/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
