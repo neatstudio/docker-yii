@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /root
 
 RUN \
-  buildDeps='net-tools git curl vim supervisor apache2 php7.2 php7.2-common php7.2-opcache php7.2-mysql php7.2-sqlite3 php7.2-curl php7.2-intl php7.2-bz2 php7.2-imap php7.2-gd php7.2-json php7.2-xdebug php7.2-mbstring php7.2-ldap php7.2-zip php7.2-xml libapache2-mod-php' \
+  buildDeps='net-tools git curl vim supervisor apache2 php7.2 php7.2-common php7.2-opcache php7.2-mysql php7.2-sqlite3 php7.2-curl php7.2-gd php7.2-json php7.2-mbstring php7.2-zip php7.2-xml libapache2-mod-php' \
 
   && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list  \
 
