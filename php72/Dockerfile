@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:stretch-slim
 MAINTAINER gouki <gouki.xiao@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -35,8 +35,7 @@ RUN \
 VOLUME ["/var/www/html","/server/wwwroot"]
 
 # Adding ressources
-#ADD ressources/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
-
+COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY resources/start.sh /root/start.sh
 COPY resources/run.sh   /root/run.sh
 COPY resources/apache.conf /etc/supervisor/conf.d/all.conf
