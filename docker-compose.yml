@@ -2,10 +2,16 @@ version: "3"
 services:
   redis:
     image: "redis:alpine"
-#  mysql:
-#    image: "mysql:5.7"
-#    volumes:
+  mysql:
+    image: "mysql:5.7"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
 #      - /Volumes/documents/server/database/mysql:/var/lib/mysql
+      - /server/database/mysql:/var/lib/mysql
+    ports:
+      - 127.0.0.1:3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
   default:
     build: php56
     links:
@@ -14,4 +20,26 @@ services:
       - 127.0.0.1:8081:80
     restart: always
     volumes:
-      - /server/wwwroot:/var/www/html
+      - /server/wwwroot/lanbaobao/hivct.org/hivct.org/www.hivct.org/iroot:/var/www/html
+  bless:
+    build: php72
+    ports:
+      - 127.0.0.1:8082:80
+    restart: always
+    volumes:
+      - /server/wwwroot/survey-docker.hivct.org:/var/www/html
+#      - /server/wwwroot/yzhan/open.hivct.org:/var/www/html
+  aids:
+    build: php72
+    ports:
+      - 127.0.0.1:8088:80
+    restart: always
+    volumes:
+      - /server/wwwroot/open.hivct.org:/var/www/html
+#      - /server/wwwroot/yzhan/aids:/var/www/html
+
+
+# 暂时用不上
+#    extra_hosts:
+#     - "bless:192.168.1.1"
+#     - "default:192.168.1.2"
