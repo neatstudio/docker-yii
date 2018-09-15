@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /root
 
 RUN \
-  buildDeps='busybox git curl supervisor apache2 php5 php5-common php5-mysqlnd php5-pdo php5-sqlite php5-curl php5-gd php5-mcrypt libapache2-mod-php5' \
+  buildDeps='busybox git curl supervisor apache2 php5 php5-common php5-mysqlnd php5-sqlite php5-curl php5-gd php5-mcrypt libapache2-mod-php5' \
   && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list  \
   && apt-get update \
   && apt-get -y install --no-install-recommends wget apt-transport-https lsb-release ca-certificates $buildDeps \
