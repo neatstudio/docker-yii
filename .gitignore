@@ -2,3 +2,4 @@
 *.pyc
 *.iml
 docker-compose.yml
+*.yml
