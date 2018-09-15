@@ -31,7 +31,14 @@ VOLUME ["/var/www/html","/server/wwwroot"]
 #COPY resources/start.sh /root/start.sh
 #COPY resources/run.sh   /root/run.sh
 #COPY resources/apache.conf /etc/supervisor/conf.d/all.conf
-ADD resources/* ./
+
+# Adding ressources
+COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+COPY resources/start.sh /root/start.sh
+COPY resources/run.sh   /root/run.sh
+COPY resources/apache.conf /etc/supervisor/conf.d/all.conf
+
+#ADD resources/* ./
 RUN chmod 755 /root/*.sh
 CMD ["/root/run.sh"]
 
