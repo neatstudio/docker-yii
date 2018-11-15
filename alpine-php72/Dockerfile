@@ -1,0 +1,1 @@
+FROM roadiz/php72-nginx-alpine:latest

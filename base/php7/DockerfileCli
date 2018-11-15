@@ -1,0 +1,6 @@
+FROM gouki/php7
+
+RUN \
+  apt-get update \
+  && apt-get -y install --no-install-recommends php7.2-cli \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/archive/*.deb /root/.cache/composer/*
