@@ -37,6 +37,7 @@ COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY resources/start.sh /root/start.sh
 COPY resources/run.sh   /root/run.sh
 COPY resources/apache.conf /etc/supervisor/conf.d/all.conf
+COPY resources/php.ini  /etc/php/7.2/apache2/php.ini
 
  # Give execution rights on the cron job
 #COPY resources/php-cron /etc/cron.d/php-cron

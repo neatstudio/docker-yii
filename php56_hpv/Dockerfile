@@ -37,6 +37,7 @@ COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY resources/start.sh /root/start.sh
 COPY resources/run.sh   /root/run.sh
 COPY resources/apache.conf /etc/supervisor/conf.d/all.conf
+COPY resources/php.ini  /etc/php5/apache2/php.ini
 
 #ADD resources/* ./
 RUN chmod 755 /root/*.sh
